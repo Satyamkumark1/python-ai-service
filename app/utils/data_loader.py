@@ -1,12 +1,69 @@
 import pandas as pd
+import ast
+import os
 from typing import List, Dict, Any
 
 def load_sample_data() -> List[Dict[str, Any]]:
     """
-    Load sample internship data for training and testing
+    Load sample internship data from CSV file for training and testing
     In production, this would connect to a database
     """
-    sample_internships = [
+    # Get the path to the CSV file relative to the project root
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(current_dir))
+    csv_path = os.path.join(project_root, "data", "sample_internships.csv")
+    
+    try:
+        # Read the CSV file
+        df = pd.read_csv(csv_path)
+        
+        # Convert DataFrame to list of dictionaries
+        internships = []
+        for _, row in df.iterrows():
+            # Parse skills lists from string representation
+            try:
+                required_skills = ast.literal_eval(row['required_skills']) if pd.notna(row['required_skills']) else []
+            except (ValueError, SyntaxError):
+                # If parsing fails, split by comma and clean up
+                required_skills = [skill.strip().strip("'\"") for skill in str(row['required_skills']).split(',')] if pd.notna(row['required_skills']) else []
+            
+            try:
+                preferred_skills = ast.literal_eval(row['preferred_skills']) if pd.notna(row['preferred_skills']) else []
+            except (ValueError, SyntaxError):
+                # If parsing fails, split by comma and clean up
+                preferred_skills = [skill.strip().strip("'\"") for skill in str(row['preferred_skills']).split(',')] if pd.notna(row['preferred_skills']) else []
+            
+            internship = {
+                "id": int(row['id']),
+                "title": str(row['title']),
+                "description": str(row['description']),
+                "required_skills": required_skills,
+                "preferred_skills": preferred_skills,
+                "category": str(row['category']),
+                "location": str(row['location']),
+                "state": str(row['state']) if pd.notna(row['state']) else None,
+                "organization": str(row['organization']),
+                "education_requirement": str(row['education_requirement'])
+            }
+            internships.append(internship)
+        
+        print(f"📊 Loaded {len(internships)} internships from CSV file")
+        return internships
+        
+    except FileNotFoundError:
+        print(f"❌ CSV file not found at {csv_path}")
+        print("🔄 Falling back to hardcoded sample data...")
+        return _get_fallback_data()
+    except Exception as e:
+        print(f"❌ Error loading CSV file: {e}")
+        print("🔄 Falling back to hardcoded sample data...")
+        return _get_fallback_data()
+
+def _get_fallback_data() -> List[Dict[str, Any]]:
+    """
+    Fallback hardcoded data in case CSV loading fails
+    """
+    return [
         {
             "id": 1,
             "title": "Software Developer Intern",
@@ -30,46 +87,8 @@ def load_sample_data() -> List[Dict[str, Any]]:
             "state": None,
             "organization": "Data Insights Inc.",
             "education_requirement": "B.Tech"
-        },
-        {
-            "id": 3,
-            "title": "Marketing Intern",
-            "description": "Create digital marketing campaigns and social media content. Analyze campaign performance and suggest improvements.",
-            "required_skills": ["Communication", "Social Media", "Content Writing"],
-            "preferred_skills": ["SEO", "Analytics", "Creativity"],
-            "category": "Marketing",
-            "location": "Cuttack",
-            "state": "Odisha",
-            "organization": "Creative Minds Agency",
-            "education_requirement": "B.A"
-        },
-        {
-            "id": 4,
-            "title": "Healthcare Intern",
-            "description": "Support healthcare operations and patient care activities. Learn about hospital management and healthcare systems.",
-            "required_skills": ["Communication", "Empathy", "Organization"],
-            "preferred_skills": ["Medical Knowledge", "First Aid", "Record Keeping"],
-            "category": "Healthcare",
-            "location": "Bhubaneswar",
-            "state": "Odisha",
-            "organization": "City Hospital",
-            "education_requirement": "B.Sc"
-        },
-        {
-            "id": 5,
-            "title": "Content Writing Intern",
-            "description": "Create engaging content for blogs, social media, and marketing materials. Research topics and optimize content for SEO.",
-            "required_skills": ["Writing", "Research", "Grammar"],
-            "preferred_skills": ["SEO", "WordPress", "Social Media"],
-            "category": "Content",
-            "location": "Remote",
-            "state": None,
-            "organization": "Content Creators Co.",
-            "education_requirement": "B.A"
         }
     ]
-    
-    return sample_internships
 
 def create_sample_student() -> Dict[str, Any]:
     """

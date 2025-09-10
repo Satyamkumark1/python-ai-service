@@ -2,3 +2,101 @@ id,title,description,required_skills,preferred_skills,category,location,state,or
 1,Software Developer Intern,"Develop web applications using Java and Spring Boot","['Java', 'Spring Boot', 'SQL']","['Git', 'Docker']",IT,Bhubaneswar,Odisha,Tech Solutions Ltd.,B.Tech
 2,Data Science Intern,"Work on machine learning projects","['Python', 'Machine Learning']","['TensorFlow', 'SQL']",IT,Remote,,Data Insights Inc.,B.Tech
 3,Marketing Intern,"Create digital marketing campaigns","['Communication', 'Social Media']","['SEO', 'Content Writing']",Marketing,Cuttack,Odisha,Creative Minds Agency,B.A
+4,Frontend Developer Intern,"Assist in building UI with React and CSS","['HTML', 'CSS', 'React']","['Figma', 'JavaScript']",IT,Bangalore,Karnataka,CodeCraft Pvt. Ltd.,B.Tech
+5,Research Assistant,"Support research in biotechnology","['Biology', 'Lab Techniques']","['Data Analysis']","Research",Chennai,Tamil Nadu,BioTech Labs,B.Sc
+6,Finance Intern,"Assist in financial analysis and reporting","['Excel', 'Accounting']","['Power BI', 'SQL']",Finance,Mumbai,Maharashtra,FinServe Ltd.,MBA
+7,Content Writer Intern,"Write blogs and social media posts","['Writing', 'Creativity']","['SEO', 'Editing']",Marketing,Delhi,Delhi,WordWorks,B.A
+8,Full-Stack Developer Intern,"Support backend and frontend tasks","['Node.js', 'React', 'MongoDB']","['AWS', 'Docker']",IT,Pune,Maharashtra,Innovatech,B.Tech
+9,HR Intern,"Assist in recruitment and training","['Communication', 'Recruitment']","['Excel', 'Public Speaking']",HR,Kolkata,West Bengal,PeopleFirst,B.A
+10,Embedded Systems Intern,"Work on IoT devices and C programming","['C', 'Microcontrollers']","['Arduino', 'Raspberry Pi']",Electronics,Hyderabad,Telangana,CircuitWave,B.Tech
+11,UI/UX Designer Intern,"Design user-friendly web interfaces","['UI Design', 'Wireframing']","['Adobe XD', 'Figma']",Design,Bangalore,Karnataka,DesignNest,B.Des
+12,Cybersecurity Intern,"Monitor and test system vulnerabilities","['Networking', 'Linux']","['Python', 'Penetration Testing']",IT,Delhi,Delhi,CyberSafe,B.Tech
+13,Operations Intern,"Assist operations team in logistics","['Excel', 'Communication']","['Project Management']",Management,Chennai,Tamil Nadu,LogiCorp,MBA
+14,Graphic Designer Intern,"Design visuals for marketing campaigns","['Photoshop', 'Illustrator']","['Canva', 'Creativity']",Design,Mumbai,Maharashtra,Pixel Studios,B.A
+15,AI Intern,"Support AI model training and evaluation","['Python', 'TensorFlow']","['PyTorch', 'NLP']",IT,Bhubaneswar,Odisha,NextGen AI,B.Tech
+16,Journalism Intern,"Assist in research and reporting","['Writing', 'Interviewing']","['Photography']",Media,Kolkata,West Bengal,DailyNews,B.A
+17,Mechanical Engineering Intern,"Work on CAD designs and simulations","['AutoCAD', 'SolidWorks']","['Matlab']",Engineering,Pune,Maharashtra,MechaWorks,B.Tech
+18,Teaching Assistant,"Support professors in coursework","['Subject Knowledge', 'Communication']","['Mentoring']",Education,Delhi,Delhi,Global Academy,B.Sc
+19,Cloud Intern,"Deploy applications on AWS cloud","['AWS', 'Linux']","['Docker', 'Kubernetes']",IT,Bangalore,Karnataka,CloudHub,B.Tech
+20,Legal Intern,"Assist in drafting and legal research","['Law', 'Research']","['Communication']",Legal,Chennai,Tamil Nadu,Lex & Co.,LLB
+id,title,description,required_skills,preferred_skills,category,location,state,organization,education_requirement
+21,Backend Developer Intern,"Build and maintain server-side logic using Python and Django","['Python', 'Django', 'REST APIs']","['PostgreSQL', 'Git']",IT,Hyderabad,Telangana,Backend Brigade,B.Tech
+22,Digital Marketing Intern,"Manage and optimize Google Ads and social media campaigns","['Google Analytics', 'Social Media Marketing']","['Content Creation', 'Data Analysis']",Marketing,Mumbai,Maharashtra,AdBuzz Media,BBA
+23,DevOps Intern,"Implement CI/CD pipelines and assist in infrastructure automation","['Linux', 'Git', 'Scripting']","['Jenkins', 'AWS']",IT,Bangalore,Karnataka,FlowState DevOps,B.Tech
+24,Biomedical Research Intern,"Conduct experiments and analyze data for medical device testing","['Biology', 'Data Recording']","['Statistics', 'Lab Safety']",Research,Chennai,Tamil Nadu,MediTech Innovations,B.Sc
+25,Investment Analyst Intern,"Research market trends and assist in building financial models","['Excel', 'Financial Modeling']","['Bloomberg Terminal', 'VBA']",Finance,Delhi,Delhi,CapitalGrow Ltd.,B.Com
+26,Video Editor Intern,"Edit and produce video content for social media and YouTube","['Video Editing', 'Adobe Premiere Pro']","['After Effects', 'Storytelling']",Media,Bhubaneswar,Odisha,Visual Stories,B.A
+27,Android Developer Intern,"Develop and test new features for Android mobile applications","['Kotlin', 'Android SDK']","['Java', 'REST APIs']",IT,Pune,Maharashtra,AppVenture,B.Tech
+28,Public Relations Intern,"Draft press releases and assist with media outreach","['Writing', 'Communication']","['Social Media', 'Event Planning']",Marketing,Kolkata,West Bengal,ConnectPR,B.A
+29,Supply Chain Intern,"Analyze logistics data and help optimize inventory management","['Excel', 'Analytical Skills']","['SQL', 'ERP Software']",Management,Chennai,Tamil Nadu,SupplyChain Pro,MBA
+30,Game Development Intern,"Assist in developing game mechanics and levels using Unity","['C#', 'Unity']","['Game Design', '3D Modeling']",IT,Remote,,NextGen Games,B.Tech
+31,Environmental Science Intern,"Conduct field research and analyze environmental samples","['Environmental Science', 'Data Collection']","['GIS', 'Report Writing']",Research,Dehradun,Uttarakhand,GreenEarth Consultants,B.Sc
+32,Product Management Intern,"Conduct user research and help define product requirements","['Analytical Thinking', 'Communication']","['SQL', 'Figma']",Management,Bangalore,Karnataka,ProductLabs,B.Tech
+33,Technical Writer Intern,"Create user manuals, API documentation, and tutorials","['Technical Writing', 'Clarity']","['Markdown', 'Basic Programming']",IT,Hyderabad,Telangana,DocuTech Inc.,B.Tech
+34,Social Media Intern,"Create and schedule engaging content across social platforms","['Content Creation', 'Social Media Platforms']","['Analytics', 'Adobe Creative Suite']",Marketing,Mumbai,Maharashtra,BrandBuzz,B.A
+35,Network Engineering Intern,"Assist in maintaining and troubleshooting network infrastructure","['Networking Fundamentals', 'TCP/IP']","['Cisco CLI', 'Wireshark']",IT,Noida,Uttar Pradesh,NetSolutions India,B.Tech
+36,Market Research Intern,"Conduct surveys and analyze consumer data to identify trends","['Data Analysis', 'Excel']","['SPSS', 'Survey Tools']",Marketing,Delhi,Delhi,Insight Partners,BBA
+37,iOS Developer Intern,"Help develop and test features for iOS applications","['Swift', 'Xcode']","['UIKit', 'REST APIs']",IT,Chennai,Tamil Nadu,iVision Mobile,B.Tech
+38,Architecture Intern,"Assist in creating architectural drawings and 3D models","['AutoCAD', '3D Modeling']","['SketchUp', 'Revit']",Design,Ahmedabad,Gujarat,Design Collective,B.Arch
+39,Finance & Analytics Intern,"Build dashboards to visualize financial performance metrics","['Excel', 'Data Visualization']","['Power BI', 'SQL']",Finance,Gurgaon,Haryana,Numero Analytics,B.Com
+40,Agri-Tech Intern,"Work on IoT-based solutions for precision agriculture","['IoT', 'Python']","['Arduino', 'Data Analysis']",Technology,Nagpur,Maharashtra,AgriGrow Tech,B.Tech
+41,Content Marketing Intern,"Develop SEO-friendly blog posts and website content","['Content Writing', 'SEO']","['WordPress', 'Keyword Research']",Marketing,Jaipur,Rajasthan,Content Kings,B.A
+42,QA/Testing Intern,"Perform manual and automated testing on web applications","['Testing Methodologies', 'Attention to Detail']","['Selenium', 'Java']",IT,Pune,Maharashtra,QualityQuest,B.Tech
+43,Photography Intern,"Capture and edit photos for events and marketing materials","['Photography', 'Photo Editing']","['Lightroom', 'Creativity']",Media,Goa,,Sunset Studios,B.A
+44,Business Development Intern,"Identify new sales leads and potential business opportunities","['Communication', 'Research']","['CRM Software', 'Presentation Skills']",Sales,Bangalore,Karnataka,SalesForce Partners,BBA
+45,Blockchain Developer Intern,"Contribute to the development of smart contracts and DApps","['Solidity', 'Blockchain Basics']","['JavaScript', 'Truffle']",IT,Hyderabad,Telangana,ChainReact Labs,B.Tech
+46,Event Management Intern,"Assist in planning and executing corporate and client events","['Organization', 'Communication']","['Vendor Management', 'Negotiation']",Management,Mumbai,Maharashtra,Elite Events,B.A
+47,Material Science Intern,"Test and analyze properties of new materials in a lab setting","['Material Science', 'Lab Techniques']","['Data Analysis', 'Report Writing']",Research,Kanpur,Uttar Pradesh,InnoMaterials,B.Tech
+48,Customer Support Intern,"Handle customer queries and provide product support via chat/email","['Communication', 'Problem Solving']","['Zendesk', 'Patience']",Support,Remote,,SupportHero Inc.,Any Graduate
+49,Data Analyst Intern,"Clean, process, and visualize data to extract insights","['Excel', 'SQL']","['Python', 'Tableau']",IT,Chennai,Tamil Nadu,DataCrunchers Pvt. Ltd.,B.Tech
+50,Human Resources Analytics Intern,"Analyze HR data related to recruitment and employee engagement","['Excel', 'Analytical Skills']","['HRIS', 'Power BI']",HR,Delhi,Delhi,TalentMetrics,MBA
+51,UX Research Intern,"Conduct user interviews and usability tests to gather feedback","['User Research', 'Empathy']","['Survey Design', 'Figma']",Design,Bangalore,Karnataka,UserFirst Design,B.Des
+52,Cybersecurity Analyst Intern,"Monitor security alerts and assist in incident response","['Cybersecurity Fundamentals', 'Analytical Thinking']","['SIEM Tools', 'Linux']",IT,Noida,Uttar Pradesh,SecureNet Systems,B.Tech
+53,E-commerce Intern,"Manage product listings and optimize the online store for sales","['E-commerce Platforms', 'Attention to Detail']","['Digital Marketing', 'Analytics']",Marketing,Surat,Gujarat,ShopEasy Ventures,BBA
+54,Robotics Intern,"Assist in building and programming robotic prototypes","['Python', 'Robotics Fundamentals']","['ROS', 'C++']",Engineering,Coimbatore,Tamil Nadu,RoboMakers,B.Tech
+55,Journalism (Digital) Intern,"Write breaking news articles and manage the digital news desk","['Writing', 'Speed']","['Social Media', 'SEO']",Media,New Delhi,Delhi,QuickNews Digital,B.A
+56,Finance Technology (FinTech) Intern,"Work on developing features for a financial technology product","['Python', 'Problem Solving']","['Java', 'Financial Knowledge']",Finance,Mumbai,Maharashtra,FinTech Innovators,B.Tech
+57,Public Policy Intern,"Research policy issues and assist in drafting briefs and reports","['Research', 'Writing']","['Legal Knowledge', 'Data Analysis']",Legal,Gandhinagar,Gujarat,PolicyThink Tank,LLB
+58,3D Animation Intern,"Create 3D models and animations for projects","['3D Modeling', 'Blender/Maya']","['Texturing', 'Rigging']",Design,Mumbai,Maharashtra,Animation Alley,B.Des
+59,Sales Operations Intern,"Support the sales team with data entry, reporting, and process optimization","['Excel', 'Organization']","['CRM (Salesforce)', 'Data Analysis']",Sales,Pune,Maharashtra,SalesOps Ltd.,BBA
+60,Renewable Energy Intern,"Support projects related to solar or wind energy systems","['Renewable Energy Concepts', 'Physics']","['AutoCAD', 'Data Analysis']",Engineering,Jaipur,Rajasthan,GreenPower Solutions,B.Tech
+61,SEO Intern,"Perform keyword research and optimize website content for search engines","['SEO Principles', 'Analytical Skills']","['Google Search Console', 'Content Writing']",Marketing,Ahmedabad,Gujarat,SearchMax Consultants,Any Graduate
+62,Database Administrator Intern,"Assist in managing, tuning, and backing up databases","['SQL', 'Database Fundamentals']","['MySQL/PostgreSQL', 'Linux']",IT,Indore,Madhya Pradesh,DataBase Pros,B.Tech
+63,Fashion Design Intern,"Assist in sketching, fabric sourcing, and creating mood boards","['Sketching', 'Creativity']","['Photoshop', 'Fashion Trends']",Design,Mumbai,Maharashtra,Studio Aesthetic,B.Des
+64,Investment Banking Intern,"Prepare pitch books and perform company valuation analysis","['Excel', 'Financial Modeling']","['PPT', 'Accounting']",Finance,Kolkata,West Bengal,Merchant Bankers Corp.,MBA
+65,Community Manager Intern,"Engage with our online community and manage social media interactions","['Communication', 'Social Media']","['Content Creation', 'Customer Support']",Marketing,Bengaluru,Karnataka,GameOn Interactive,B.A
+66,Embedded Linux Intern,"Port and develop applications for embedded Linux systems","['C', 'Linux']","['Yocto Project', 'Shell Scripting']",Electronics,Bangalore,Karnataka,EmbeddedBits,B.Tech
+67,Clinical Research Intern,"Support clinical trials by maintaining documentation and data entry","['Attention to Detail', 'Life Sciences']","['GCP Guidelines', 'Excel']",Research,Hyderabad,Telangana,ClinTrial Solutions,B.Sc
+68,IT Support Intern,"Provide technical assistance to employees and troubleshoot hardware/software issues","['Troubleshooting', 'Windows/MacOS']","['Networking', 'Communication']",IT,Chennai,Tamil Nadu,TechSupport Plus,BCA
+69,Digital Content Creator Intern,"Create short-form video content for platforms like Instagram Reels and YouTube Shorts","['Video Editing', 'Creativity']","['Scriptwriting', 'Social Media Trends']",Media,Delhi,Delhi,ViralVerse,B.A
+70,Strategy Intern,"Conduct competitive analysis and research for strategic projects","['Research', 'Strategic Thinking']","['Consulting Frameworks', 'PPT']",Management,Gurgaon,Haryana,StratAdvise Consultants,MBA
+71,Backend Intern (Node.js),"Develop and maintain scalable server-side features using Node.js","['Node.js', 'JavaScript']","['Express.js', 'MongoDB']",IT,Pune,Maharashtra,ServerCraft.io,B.Tech
+72,Public Health Intern,"Assist in community health outreach programs and data collection","['Communication', 'Research']","['Data Analysis', 'Public Health Knowledge']",Research,Bhubaneswar,Odisha,HealthOutreach India,B.Sc
+73,UI Developer Intern,"Translate design mockups into functional and responsive web pages","['HTML', 'CSS', 'JavaScript']","['React', 'Figma']",IT,Navi Mumbai,Maharashtra,Interface Studios,B.Tech
+74,Retail Management Intern,"Work on the shop floor, manage inventory, and analyze sales data","['Communication', 'Customer Service']","['Excel', 'Retail Operations']",Management,Lucknow,Uttar Pradesh,UrbanRetail,BBA
+75,Audio Engineer Intern,"Assist with recording, editing, and mixing audio for projects","['Audio Editing', 'Pro Tools/DAW']","['Sound Design', 'Creativity']",Media,Chennai,Tamil Nadu,SoundSmith Studios,B.A
+76,Quantitative Analysis Intern,"Develop and test algorithmic trading strategies","['Python', 'Statistics']","['C++', 'Financial Markets']",Finance,Mumbai,Maharashtra,AlgoTrade Capital,B.Tech
+77,GIS Intern,"Work with geographic data to create maps and perform spatial analysis","['GIS Software', 'Spatial Analysis']","['Python', 'Remote Sensing']",Technology,Dehradun,Uttarakhand,GeoMappers Inc.,B.Tech
+78,Recruitment Intern,"Source candidates, screen resumes, and schedule interviews","['Communication', 'Sourcing']","['LinkedIn Recruiter', 'ATS']",HR,Hyderabad,Telangana,TalentFinders,B.A
+79,Full-Stack Intern (MERN),"Build end-to-end features using the MERN stack (MongoDB, Express, React, Node)","['JavaScript', 'React', 'Node.js']","['MongoDB', 'Express.js']",IT,Bangalore,Karnataka,WebWeavers,B.Tech
+80,Pharmaceutical Sales Intern,"Accompany sales representatives on field visits and learn about product detailing","['Communication', 'Presentation']","['Pharmacology', 'Relationship Building']",Sales,Chandigarh,Punjab,MediPharma Solutions,B.Pharma
+81,Game Design Intern,"Design game levels, characters, and mechanics","['Game Design Principles', 'Creativity']","['Unity', 'Scripting']",Design,Remote,,DreamGate Games,B.Des
+82,Cloud Security Intern,"Assist in implementing security controls in cloud environments (AWS/Azure)","['Cloud Basics', 'Security Fundamentals']","['AWS IAM', 'Scripting']",IT,Chennai,Tamil Nadu,CloudShield Security,B.Tech
+83,Brand Management Intern,"Support the development and execution of brand marketing strategies","['Marketing', 'Creativity']","['Market Research', 'PPT']",Marketing,Kochi,Kerala,BrandHouse International,MBA
+84,Civil Engineering Intern,"Assist in site supervision and review construction drawings","['AutoCAD', 'Civil Engineering Basics']","['MS Project', 'Surveying']",Engineering,Vadodara,Gujarat,ConstructWell Engineers,B.Tech
+85,Technical Support Engineer Intern,"Debug and resolve customer technical issues related to the product","['Problem Solving', 'Communication']","['Linux', 'Networking']",IT,Raipur,Chhattisgarh,TechResolve Inc.,B.Tech
+86,Social Work Intern,"Work with NGOs on field projects for community development","['Empathy', 'Communication']","['Project Management', 'Report Writing']",Social Work,Guwahati,Assam,Umang Foundation,MSW
+87,Product Design Intern,"Design user interfaces and create interactive prototypes","['Figma', 'UI/UX Design']","['Prototyping', 'User Research']",Design,Gurgaon,Haryana,ProductPixel Labs,B.Des
+88,Business Analytics Intern,"Analyze business metrics and create reports for stakeholders","['Excel', 'Data Analysis']","['SQL', 'Tableau']",Analytics,Pune,Maharashtra,BizInsight Analytics,BBA
+89,Microbiology Intern,"Perform microbiological testing and maintain lab cultures","['Microbiology', 'Aseptic Techniques']","['Data Recording', 'Lab Safety']",Research,Hyderabad,Telangana,BioLab Research,B.Sc
+90,Frontend Intern (Vue.js),"Help build user interfaces for web applications using Vue.js","['JavaScript', 'HTML', 'CSS']","['Vue.js', 'REST APIs']",IT,Jaipur,Rajasthan,VueVisionaries,B.Tech
+91,Market Risk Intern,"Assist in measuring and analyzing market risk exposure","['Excel', 'Quantitative Skills']","['VBA', 'Financial Products']",Finance,Mumbai,Maharashtra,RiskMetrics Ltd.,MBA
+92,Marine Biology Intern,"Participate in field research and data collection related to marine ecosystems","['Marine Biology', 'Fieldwork']","['SCUBA Diving', 'Data Analysis']",Research,Goa,,Oceanic Research Institute,B.Sc
+93,IT Project Management Intern,"Assist project managers in tracking timelines, resources, and deliverables","['Organization', 'Communication']","['Jira', 'PPT']",Management,Noida,Uttar Pradesh,ProManage IT,B.Tech
+94,Music Production Intern,"Assist in music production, mixing, and mastering for artists","['Music Theory', 'DAW (Ableton/FL)']","['Sound Design', 'Creativity']",Media,Mumbai,Maharashtra,BeatFactory,B.A
+95,Data Engineering Intern,"Build and maintain data pipelines for ETL processes","['Python', 'SQL']","['Apache Spark', 'AWS']",IT,Bangalore,Karnataka,DataFlow Engineers,B.Tech
+96,Industrial Design Intern,"Design consumer products and create detailed 3D models and prototypes","['3D Modeling', 'Sketching']","['CAD', 'Design Thinking']",Design,Faridabad,Haryana,DesignForge Studios,B.Des
+97,Corporate Law Intern,"Conduct legal research and assist in drafting contracts and agreements","['Legal Research', 'Drafting']","['Corporate Law', 'Communication']",Legal,Mumbai,Maharashtra,CorpLegal Advisors,LLB
+98,AR/VR Development Intern,"Develop immersive experiences using Augmented or Virtual Reality tools","['C#', 'Unity']","['3D Modeling', 'UX Design']",IT,Hyderabad,Telangana,Immerse Labs,B.Tech
+99,Hotel Management Intern,"Rotate through various departments of a hotel (Front Office, F&B, Housekeeping)","['Customer Service', 'Communication']","['Hospitality Software', 'Multitasking']",Hospitality,Jaipur,Rajasthan,GrandStay Hotels,BHM
+100,AI Ethics Intern,"Research ethical implications of AI systems and help develop guidelines","['Research', 'Ethics']","['AI/ML Knowledge', 'Policy']",Research,Bangalore,Karnataka,EthicalAI Forum,B.Tech
