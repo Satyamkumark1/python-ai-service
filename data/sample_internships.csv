@@ -1,0 +1,4 @@
+id,title,description,required_skills,preferred_skills,category,location,state,organization,education_requirement
+1,Software Developer Intern,"Develop web applications using Java and Spring Boot","['Java', 'Spring Boot', 'SQL']","['Git', 'Docker']",IT,Bhubaneswar,Odisha,Tech Solutions Ltd.,B.Tech
+2,Data Science Intern,"Work on machine learning projects","['Python', 'Machine Learning']","['TensorFlow', 'SQL']",IT,Remote,,Data Insights Inc.,B.Tech
+3,Marketing Intern,"Create digital marketing campaigns","['Communication', 'Social Media']","['SEO', 'Content Writing']",Marketing,Cuttack,Odisha,Creative Minds Agency,B.A

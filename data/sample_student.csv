@@ -1,0 +1,41 @@
+id,education_level,skills,interests,preferred_location,preferred_state,is_first_gen_learner
+1,B.Tech,"['Java', 'Python', 'Spring Boot']","['Software Development', 'AI']",Bhubaneswar,Odisha,true
+2,B.A,"['Communication', 'Content Writing']","['Marketing', 'Social Media']",Cuttack,Odisha,false
+3,B.Sc,"['Python', 'Data Analysis']","['Research', 'Machine Learning']",Delhi,Delhi,true
+4,M.Tech,"['C++', 'AI', 'TensorFlow']","['Deep Learning', 'Robotics']",Bangalore,Karnataka,false
+5,MBA,"['Management', 'Finance']","['Business Strategy', 'Entrepreneurship']",Mumbai,Maharashtra,true
+6,B.Tech,"['HTML', 'CSS', 'JavaScript']","['Web Development', 'UI/UX']",Chennai,Tamil Nadu,false
+7,B.A,"['Public Speaking', 'Leadership']","['HR', 'Event Management']",Kolkata,West Bengal,true
+8,Diploma,"['Electrical Basics', 'Circuits']","['Electronics', 'Robotics']",Pune,Maharashtra,false
+9,B.Sc,"['R', 'Statistics']","['Data Science', 'Finance']",Hyderabad,Telangana,true
+10,B.Tech,"['Python', 'SQL', 'Django']","['Backend Development', 'AI']",Cuttack,Odisha,false
+11,MBA,"['Digital Marketing', 'SEO']","['Marketing', 'Content Strategy']",Delhi,Delhi,true
+12,B.Tech,"['Java', 'Spring Boot', 'Docker']","['Software Engineering', 'Cloud']",Bhubaneswar,Odisha,true
+13,B.A,"['Writing', 'Design']","['Media', 'Advertising']",Mumbai,Maharashtra,false
+14,B.Sc,"['Biology', 'Lab Research']","['Healthcare', 'Biotech']",Chennai,Tamil Nadu,true
+15,M.Tech,"['C', 'Embedded Systems']","['IoT', 'Automation']",Bangalore,Karnataka,false
+16,B.Tech,"['React', 'Node.js']","['Full-Stack Development']",Hyderabad,Telangana,true
+17,B.A,"['Photography', 'Editing']","['Film', 'Media']",Kolkata,West Bengal,false
+18,MBA,"['Leadership', 'Operations']","['Supply Chain', 'Business']",Delhi,Delhi,true
+19,B.Sc,"['Chemistry', 'Lab Skills']","['Pharma', 'Research']",Pune,Maharashtra,false
+20,B.Tech,"['C++', 'Python']","['AI', 'Cybersecurity']",Bhubaneswar,Odisha,true
+21,Diploma,"['Mechanical Basics', 'CAD']","['Automobile', 'Manufacturing']",Chennai,Tamil Nadu,false
+22,B.Sc,"['Math', 'Python']","['Data Science', 'Research']",Mumbai,Maharashtra,true
+23,M.Tech,"['Deep Learning', 'NLP']","['AI', 'Research']",Bangalore,Karnataka,false
+24,B.Tech,"['Cloud', 'AWS']","['DevOps', 'System Design']",Delhi,Delhi,true
+25,B.A,"['Communication', 'Writing']","['Journalism', 'Content']",Kolkata,West Bengal,false
+26,B.Sc,"['Zoology', 'Lab Work']","['Wildlife', 'Research']",Hyderabad,Telangana,true
+27,B.Tech,"['Angular', 'JavaScript']","['Frontend Development']",Pune,Maharashtra,false
+28,MBA,"['Finance', 'Excel']","['Banking', 'Investments']",Mumbai,Maharashtra,true
+29,B.Tech,"['Java', 'Kotlin']","['Android Development']",Bhubaneswar,Odisha,false
+30,B.A,"['Music', 'Theatre']","['Arts', 'Drama']",Delhi,Delhi,true
+31,B.Sc,"['Physics', 'Matlab']","['Research', 'Engineering']",Chennai,Tamil Nadu,false
+32,M.Tech,"['AI', 'Computer Vision']","['Robotics', 'Healthcare']",Bangalore,Karnataka,true
+33,B.Tech,"['SQL', 'Data Engineering']","['Big Data', 'Analytics']",Hyderabad,Telangana,false
+34,B.A,"['History', 'Research']","['Education', 'Social Work']",Kolkata,West Bengal,true
+35,B.Sc,"['Environmental Science', 'GIS']","['Sustainability', 'Research']",Delhi,Delhi,false
+36,Diploma,"['Civil Basics', 'Surveying']","['Construction', 'Planning']",Pune,Maharashtra,true
+37,B.Tech,"['Python', 'Flask']","['AI', 'Web Dev']",Cuttack,Odisha,false
+38,MBA,"['HR', 'Training']","['People Management']",Mumbai,Maharashtra,true
+39,B.Sc,"['Computer Networks', 'Linux']","['Cybersecurity', 'IT']",Bhubaneswar,Odisha,false
+40,B.Tech,"['JavaScript', 'Node.js']","['Web Apps', 'AI']",Bangalore,Karnataka,true
