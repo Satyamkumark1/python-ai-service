@@ -59,7 +59,12 @@ async def generate_recommendations(request: StudentRequest):
         student_data = request.dict()
         
         # Get recommendations
-        recommendations = recommendation_service.get_recommendations(student_data, top_n=5)
+        recommendations = recommendation_service.get_recommendations(
+            student_data, 
+            top_n=5,
+            request_id=request.request_id,
+            send_callback=request.send_callback
+        )
         
         processing_time = (datetime.now() - start_time).total_seconds() * 1000
         
@@ -88,7 +93,11 @@ async def provide_feedback(feedback: FeedbackRequest):
     Provide feedback on recommendations to improve the AI model
     """
     try:
-        success = recommendation_service.process_feedback(feedback.dict())
+        success = recommendation_service.process_feedback(
+            feedback.dict(),
+            request_id=feedback.request_id,
+            send_callback=feedback.send_callback
+        )
         
         if success:
             return FeedbackResponse(message="Feedback received successfully. Thank you for helping us improve!")
@@ -115,7 +124,11 @@ async def retrain_model(request: RetrainRequest = None):
         force = request.force_retrain if request else False
         start_time = datetime.now()
         
-        success = recommendation_service.retrain_model(force=force)
+        success = recommendation_service.retrain_model(
+            force=force,
+            request_id=request.request_id if request else None,
+            send_callback=request.send_callback if request else True
+        )
         
         training_time = (datetime.now() - start_time).total_seconds()
         

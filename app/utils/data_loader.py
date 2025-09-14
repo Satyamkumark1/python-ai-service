@@ -2,11 +2,35 @@ import pandas as pd
 import ast
 import os
 from typing import List, Dict, Any
+from ..services.api_client import SpringBootAPIClient
 
 def load_sample_data() -> List[Dict[str, Any]]:
     """
-    Load sample internship data from CSV file for training and testing
-    In production, this would connect to a database
+    Load internship data from Spring Boot backend API
+    Falls back to CSV file if API is not available
+    """
+    # Try to load from Spring Boot API first
+    try:
+        api_client = SpringBootAPIClient()
+        
+        # Check if API is available
+        if api_client.health_check():
+            print("🌐 Spring Boot API is available, fetching internships...")
+            internships = api_client.get_all_internships()
+            print(f"📊 Loaded {len(internships)} internships from Spring Boot API")
+            return internships
+        else:
+            print("⚠️  Spring Boot API is not available, falling back to CSV...")
+            return _load_from_csv()
+            
+    except Exception as e:
+        print(f"❌ Error connecting to Spring Boot API: {e}")
+        print("🔄 Falling back to CSV file...")
+        return _load_from_csv()
+
+def _load_from_csv() -> List[Dict[str, Any]]:
+    """
+    Load internship data from CSV file as fallback
     """
     # Get the path to the CSV file relative to the project root
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -20,6 +44,12 @@ def load_sample_data() -> List[Dict[str, Any]]:
         # Convert DataFrame to list of dictionaries
         internships = []
         for _, row in df.iterrows():
+            # Skip rows where id is not numeric (like header row)
+            try:
+                internship_id = int(row['id'])
+            except (ValueError, TypeError):
+                continue
+                
             # Parse skills lists from string representation
             try:
                 required_skills = ast.literal_eval(row['required_skills']) if pd.notna(row['required_skills']) else []
@@ -34,7 +64,7 @@ def load_sample_data() -> List[Dict[str, Any]]:
                 preferred_skills = [skill.strip().strip("'\"") for skill in str(row['preferred_skills']).split(',')] if pd.notna(row['preferred_skills']) else []
             
             internship = {
-                "id": int(row['id']),
+                "id": internship_id,
                 "title": str(row['title']),
                 "description": str(row['description']),
                 "required_skills": required_skills,
@@ -89,6 +119,37 @@ def _get_fallback_data() -> List[Dict[str, Any]]:
             "education_requirement": "B.Tech"
         }
     ]
+
+def load_student_data(student_id: int = None) -> Dict[str, Any]:
+    """
+    Load student data from Spring Boot backend API
+    Falls back to sample data if API is not available
+    """
+    if student_id is None:
+        return create_sample_student()
+    
+    # Try to load from Spring Boot API first
+    try:
+        api_client = SpringBootAPIClient()
+        
+        # Check if API is available
+        if api_client.health_check():
+            print(f"🌐 Spring Boot API is available, fetching student {student_id}...")
+            student = api_client.get_student_by_id(student_id)
+            if student:
+                print(f"📊 Loaded student {student_id} from Spring Boot API")
+                return student
+            else:
+                print(f"⚠️  Student {student_id} not found in API, using sample data...")
+                return create_sample_student()
+        else:
+            print("⚠️  Spring Boot API is not available, using sample data...")
+            return create_sample_student()
+            
+    except Exception as e:
+        print(f"❌ Error connecting to Spring Boot API: {e}")
+        print("🔄 Using sample student data...")
+        return create_sample_student()
 
 def create_sample_student() -> Dict[str, Any]:
     """

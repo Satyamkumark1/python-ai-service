@@ -20,3 +20,6 @@ python-jose==3.3.0
 # Development
 pytest==7.4.3
 requests==2.31.0
+
+# API Integration
+httpx==0.25.0

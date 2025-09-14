@@ -10,6 +10,8 @@ class StudentRequest(BaseModel):
     preferred_location: Optional[str] = Field(None, description="Preferred internship location", example="Bhubaneswar")
     preferred_state: Optional[str] = Field(None, description="Preferred internship state", example="Odisha")
     is_first_gen_learner: bool = Field(False, description="First-generation learner status")
+    request_id: Optional[str] = Field(None, description="Optional request ID for tracking")
+    send_callback: bool = Field(True, description="Whether to send callback to Spring Boot")
 
 class FeedbackRequest(BaseModel):
     """Request model for recommendation feedback"""
@@ -17,7 +19,11 @@ class FeedbackRequest(BaseModel):
     internship_id: int = Field(..., description="Internship identifier")
     feedback: str = Field(..., description="Feedback type", example="LIKE/DISLIKE")
     comments: Optional[str] = Field(None, description="Additional comments")
+    request_id: Optional[str] = Field(None, description="Optional request ID for tracking")
+    send_callback: bool = Field(True, description="Whether to send callback to Spring Boot")
 
 class RetrainRequest(BaseModel):
     """Request model for model retraining"""
     force_retrain: bool = Field(False, description="Force retrain even if model exists")
+    request_id: Optional[str] = Field(None, description="Optional request ID for tracking")
+    send_callback: bool = Field(True, description="Whether to send callback to Spring Boot")
