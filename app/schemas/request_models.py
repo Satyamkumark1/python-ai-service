@@ -27,3 +27,12 @@ class RetrainRequest(BaseModel):
     force_retrain: bool = Field(False, description="Force retrain even if model exists")
     request_id: Optional[str] = Field(None, description="Optional request ID for tracking")
     send_callback: bool = Field(True, description="Whether to send callback to Spring Boot")
+
+class ResumeAnalyzeRequest(BaseModel):
+    """Request model for resume analysis"""
+    resume_text: str = Field(..., description="Full resume text content to analyze")
+    skills: Optional[List[str]] = Field(None, description="Detected or provided skills list")
+    interests: Optional[List[str]] = Field(None, description="Detected or provided interests list")
+    education_level: Optional[str] = Field(None, description="Education level string")
+    college_name: Optional[str] = Field(None, description="College or university name")
+    target_role: Optional[str] = Field(None, description="Optional target role to tailor suggestions")

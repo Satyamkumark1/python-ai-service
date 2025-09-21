@@ -1,13 +1,14 @@
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI, HTTPException, status, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from datetime import datetime
 import uvicorn
 
-from .schemas.request_models import StudentRequest, FeedbackRequest, RetrainRequest
+from .schemas.request_models import StudentRequest, FeedbackRequest, RetrainRequest, ResumeAnalyzeRequest
 from .schemas.response_models import (
-    RecommendationResponse, HealthResponse, ModelInfoResponse, 
-    TrainingResponse, ErrorResponse, FeedbackResponse
+    RecommendationResponse, HealthResponse, ModelInfoResponse,
+    TrainingResponse, ErrorResponse, FeedbackResponse,
+    ResumeAnalyzeResponse, ResumeAnalyzeSuggestion
 )
 from .services.recommendation_services import RecommendationService
 
@@ -23,10 +24,10 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:8080"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origin_regex=r".*",
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
+    allow_headers=["*"]
 )
 
 # Initialize services
@@ -174,6 +175,73 @@ async def model_info():
     model_info = recommendation_service.get_model_info()
     
     return ModelInfoResponse(**model_info)
+
+
+def _analyze_resume_logic(req: ResumeAnalyzeRequest) -> ResumeAnalyzeResponse:
+    text = (req.resume_text or "").strip()
+    suggestions = []
+
+    def add(cat, msg, severity="info"):
+        suggestions.append(ResumeAnalyzeSuggestion(category=cat, message=msg, severity=severity))
+
+    # Basic checks
+    if len(text) < 400:
+        add("Length", "Your resume appears short. Consider adding more details about projects, impact, and technologies.", "warn")
+    if len(text) > 2000:
+        add("Length", "Your resume may be too long. Aim for 1 page for students/early career.", "warn")
+
+    # Contact info presence
+    if ("@" not in text) and ("email" not in text.lower()):
+        add("Contact", "Add a professional email at the top.", "critical")
+
+    # Action verbs
+    action_verbs = ["built", "developed", "designed", "implemented", "led", "optimized", "automated", "analyzed"]
+    if not any(v in text.lower() for v in action_verbs):
+        add("Language", "Use strong action verbs (e.g., built, developed, designed) in bullet points.")
+
+    # Quantification
+    import re
+    has_numbers = re.search(r"\b\d+%?|\b\d+\b", text)
+    if not has_numbers:
+        add("Impact", "Quantify results (e.g., improved load time by 30%, reduced errors by 15%).")
+
+    # Skills alignment
+    if req.skills:
+        missing_keywords = [s for s in req.skills if s.lower() not in text.lower()]
+        if missing_keywords:
+            add("Skills", f"Consider reflecting key skills in bullets where relevant: {', '.join(missing_keywords[:6])}.")
+
+    # Interests alignment
+    if req.interests:
+        if not any(i.lower() in text.lower() for i in req.interests):
+            add("Focus", f"Align your summary or projects with interests: {', '.join(req.interests[:3])}.")
+
+    # Education
+    if req.education_level and req.education_level.lower() not in text.lower():
+        add("Education", "Include your degree level clearly in the Education section.")
+    if req.college_name and req.college_name.lower() not in text.lower():
+        add("Education", "Include your college/university name in Education.")
+
+    # Simple scoring (heuristic)
+    score = 70.0
+    for s in suggestions:
+        if s.severity == "critical":
+            score -= 10
+        elif s.severity == "warn":
+            score -= 5
+
+    score = max(0.0, min(100.0, score))
+    return ResumeAnalyzeResponse(suggestions=suggestions, score=score, analyzed_at=datetime.now().isoformat())
+
+
+@app.post("/resume/analyze", response_model=ResumeAnalyzeResponse, responses={500: {"model": ErrorResponse}})
+async def analyze_resume(req: ResumeAnalyzeRequest):
+    try:
+        return _analyze_resume_logic(req)
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f"Resume analysis failed: {str(e)}")
+
+
 
 @app.get("/internships/count")
 async def get_internships_count():

@@ -50,3 +50,17 @@ class ErrorResponse(BaseModel):
 class FeedbackResponse(BaseModel):
     """Feedback success response"""
     message: str
+
+
+class ResumeAnalyzeSuggestion(BaseModel):
+    """Single suggestion item for resume improvement"""
+    category: str
+    message: str
+    severity: str = "info"  # info, warn, critical
+
+
+class ResumeAnalyzeResponse(BaseModel):
+    """Resume analysis response"""
+    suggestions: List[ResumeAnalyzeSuggestion]
+    score: Optional[float] = None
+    analyzed_at: str = datetime.now().isoformat()

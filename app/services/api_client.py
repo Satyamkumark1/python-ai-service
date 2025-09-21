@@ -31,24 +31,45 @@ class SpringBootAPIClient:
     
     def get_all_internships(self) -> List[Dict[str, Any]]:
         """
-        Fetch all internships from Spring Boot backend
+        Fetch all internships from Spring Boot backend (handles pagination)
         """
         try:
-            url = f"{self.base_url}{self.internships_endpoint}"
-            logger.info(f"Fetching internships from: {url}")
+            all_internships = []
+            page = 0
+            size = 100  # Fetch 100 internships per page
             
-            response = requests.get(
-                url, 
-                headers=self.headers, 
-                timeout=self.timeout
-            )
-            response.raise_for_status()
+            while True:
+                url = f"{self.base_url}{self.internships_endpoint}?page={page}&size={size}"
+                logger.info(f"Fetching internships from: {url}")
+                
+                response = requests.get(
+                    url, 
+                    headers=self.headers, 
+                    timeout=self.timeout
+                )
+                response.raise_for_status()
+                
+                response_data = response.json()
+                
+                # Handle paginated response
+                if isinstance(response_data, dict) and 'content' in response_data:
+                    internships = response_data['content']
+                    all_internships.extend(internships)
+                    
+                    # Check if this is the last page
+                    if response_data.get('last', True) or len(internships) < size:
+                        break
+                    page += 1
+                else:
+                    # Direct array response (fallback)
+                    internships = response_data
+                    all_internships.extend(internships)
+                    break
             
-            internships = response.json()
-            logger.info(f"Successfully fetched {len(internships)} internships from Spring Boot API")
+            logger.info(f"Successfully fetched {len(all_internships)} internships from Spring Boot API")
             
             # Transform the data to match our expected format
-            return self._transform_internships_data(internships)
+            return self._transform_internships_data(all_internships)
             
         except requests.exceptions.RequestException as e:
             logger.error(f"Failed to fetch internships from Spring Boot API: {e}")
@@ -214,12 +235,12 @@ class SpringBootAPIClient:
         Check if the Spring Boot API is accessible
         """
         try:
-            # Try to hit a health endpoint or the base URL
-            health_url = f"{self.base_url}/actuator/health"
-            response = requests.get(health_url, timeout=5)
+            # Try to hit the internships endpoint directly
+            url = f"{self.base_url}{self.internships_endpoint}?page=0&size=1"
+            response = requests.get(url, headers=self.headers, timeout=5)
             return response.status_code == 200
         except:
-            # If health endpoint doesn't exist, try the base URL
+            # If internships endpoint doesn't work, try the base URL
             try:
                 response = requests.get(self.base_url, timeout=5)
                 return response.status_code in [200, 404]  # 404 is ok if base URL doesn't have a root endpoint
